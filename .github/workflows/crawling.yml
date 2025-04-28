@@ -1,12 +1,12 @@
-name: Run Notebook and Save CSV
+name: Run Python Scripts and Save CSV
 
 on:
   schedule:
-    - cron: '26 10 * * *'  # 10:10 UTC = 17:10 WIB
+    - cron: '33 10 * * *'  # 10:10 UTC = 17:10 WIB
   workflow_dispatch:
 
 jobs:
-  run-notebook:
+  run-scripts:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,19 +21,15 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pandas requests papermill jupyter ipykernel
+        pip install pandas requests papermill
 
-    - name: Install Jupyter kernel
+    - name: Run request.py script
       run: |
-        python -m ipykernel install --user
+        python request.py
 
-    - name: Check available kernels
+    - name: Run ekstrak.py script
       run: |
-        jupyter kernelspec list
-
-    - name: Run the notebook
-      run: |
-        papermill code.ipynb output.ipynb -k python3
+        python ekstrak.py
 
     - name: Commit and Push CSV
       run: |
