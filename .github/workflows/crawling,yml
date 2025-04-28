@@ -2,7 +2,7 @@ name: Run Notebook and Save CSV
 
 on:
   schedule:
-    - cron: '0 2 * * *'  # 09:00 WIB
+    - cron: '0 10 * * *'  # 17:00 WIB, cron diatur di UTC jadi 10:00 UTC
   workflow_dispatch:
 
 jobs:
