@@ -1,0 +1,44 @@
+name: Automate Silinda Crawl and Save CSV
+
+on:
+  schedule:
+    # Menjadwalkan tugas untuk berjalan setiap hari pada jam 17:10 WIB (10:10 UTC)
+    - cron: '10 10 * * *'  # 10:10 UTC = 17:10 WIB
+
+jobs:
+  crawl-and-save:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run the Jupyter Notebook
+        run: |
+          jupyter nbconvert --to notebook --execute --inplace code.ipynb
+
+      - name: List files (for debugging)
+        run: ls -la
+
+      - name: Commit and Push CSV
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
+          # Add the CSV file(s) to git
+          git add *.csv
+          
+          # Commit if there are changes
+          git commit -m "Update CSV data [$(date +'%Y-%m-%d %H:%M:%S')]" || echo "No changes to commit"
+          
+          # Push changes to the repository
+          git push
