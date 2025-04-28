@@ -1,70 +1,64 @@
 import pandas as pd
-import numpy as np
-
-df =  pd.read_csv('data_silinda.csv')
-
 import ast
-from datetime import datetime
 
-def extract_result_data(df):
-    """
-    Fungsi untuk mengekstrak dan membersihkan data dari kolom 'result'
-    """
-    try:
-        # 1. Konversi string ke list of dicts
-        if isinstance(df['result'], str):
-            try:
-                # Ganti tanda kutip tunggal dengan ganda untuk valid JSON
-                json_str = df['result'].replace("'", '"')
-                results_list = ast.literal_eval(json_str)
-            except (SyntaxError, ValueError) as e:
-                print(f"Error parsing JSON: {e}")
-                return pd.DataFrame()  # Return empty DataFrame jika error
-        
-        # 2. Konversi ke DataFrame
-        df_results = pd.DataFrame(results_list)
-        
-        if not df_results.empty:
-            # 3. Pembersihan data
-            # Konversi tipe data
-            df_results['value'] = pd.to_numeric(df_results['value'], errors='coerce')
-            
-            # Handle multiple date formats
-            df_results['date'] = pd.to_datetime(
-                df_results['date'], 
-                errors='coerce',
-                format='mixed'  # Untuk handle berbagai format tanggal
-            )
-            
-            # Drop baris dengan data hilang
-            df_results.dropna(subset=['value', 'date'], inplace=True)
-            
-            # 4. Sort by date
-            df_results.sort_values('date', inplace=True)
-            
-            return df_results
-            
-    except Exception as e:
-        print(f"Unexpected error: {e}")
-    
-    return pd.DataFrame()
+# List semua file dan nama kolomnya
+files = {
+    'medium_cikurubuk': 'medium_cikurubuk.csv',
+    'medium_pancasila': 'medium_pancasila.csv',
+    'premium_cikurubuk': 'premium_cikurubuk.csv',
+    'premium_pancasila': 'premium_pancasila.csv'
+}
 
-# Contoh penggunaan:
-if not df.empty and 'result' in df.columns:
-    # Ekstrak data untuk setiap baris (jika df memiliki multiple rows)
-    all_results = pd.concat(
-        [extract_result_data(row) for _, row in df.iterrows()],
-        ignore_index=True
-    )
-    
-    print("DataFrame Hasil Ekstraksi:")
-    print(all_results.head())
-    
-    # Simpan ke CSV
+def extract_values_only(df):
+    """
+    Ekstrak hanya kolom 'value' dari kolom 'result'
+    """
+    extracted_values = []
+
+    if 'result' in df.columns:
+        for idx, row in df.iterrows():
+            result_data = row['result']
+            if isinstance(result_data, str):
+                try:
+                    results_list = ast.literal_eval(result_data)
+                    if isinstance(results_list, list):
+                        # Ambil semua 'value'
+                        for item in results_list:
+                            value = item.get('value', None)
+                            extracted_values.append(value)
+                except (ValueError, SyntaxError) as e:
+                    print(f"Error parsing row {idx}: {e}")
+                    extracted_values.append(None)
+            else:
+                # Kalau bukan string (misal int atau NaN), isi None
+                extracted_values.append(None)
+    return pd.Series(extracted_values)
+
+# Dictionary untuk menyimpan semua hasil
+all_data = {}
+
+# Proses semua file
+for name, filename in files.items():
+    print(f"Memproses {filename}...")
     try:
-        all_results.to_csv('hasil_ekstraksi.csv', index=False, encoding='utf-8-sig')
-        print("Data berhasil disimpan ke hasil_ekstraksi.csv")
+        df = pd.read_csv(filename)
+        values_series = extract_values_only(df)
+
+        # Pastikan semua isi jadi float
+        values_series = pd.to_numeric(values_series, errors='coerce')
+
+        all_data[name] = values_series
     except Exception as e:
-        print(f"Gagal menyimpan file: {e}")
-else:
-    print("DataFrame input tidak valid atau kolom 'result' tidak ditemukan")
+        print(f"Gagal memproses {filename}: {e}")
+
+# Gabungkan semua menjadi satu DataFrame
+combined_df = pd.DataFrame(all_data)
+
+# Hitung rata-rata setelah konversi ke numerik
+combined_df['medium'] = combined_df[['medium_cikurubuk', 'medium_pancasila']].mean(axis=1)
+combined_df['premium'] = combined_df[['premium_cikurubuk', 'premium_pancasila']].mean(axis=1)
+
+# Simpan hasil ke CSV
+combined_filename = 'data_gabungan_dengan_rata2.csv'
+combined_df.to_csv(combined_filename, index=False, encoding='utf-8-sig')
+print(f"Data gabungan dengan kolom rata-rata berhasil disimpan ke {combined_filename}")
