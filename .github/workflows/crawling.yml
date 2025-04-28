@@ -1,12 +1,12 @@
-name: Run Python Scripts and Save CSV
+name: Run Notebook and Save CSV
 
 on:
   schedule:
-    - cron: '40 10 * * *'  # 10:10 UTC = 17:10 WIB
+    - cron: '26 10 * * *'  # 10:10 UTC = 17:10 WIB
   workflow_dispatch:
 
 jobs:
-  run-scripts:
+  run-notebook:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,26 +21,21 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pandas requests papermill
+        pip install pandas requests papermill jupyter ipykernel
 
-    - name: Run request.py script
+    - name: Install Jupyter kernel
+      run: |
+        python -m ipykernel install --user
+
+    - name: Run request.py and ekstrak.py
       run: |
         python request.py
-
-    - name: Run ekstrak.py script
-      run: |
         python ekstrak.py
 
     - name: Commit and Push CSV
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        
-        # Menambahkan file CSV yang di-ignore
-        git add -f data_silinda.csv hasil_ekstraksi.csv
-        
-        # Commit perubahan
+        git add *.csv
         git commit -m "Update CSV data [$(date +'%Y-%m-%d %H:%M:%S')]" || echo "No changes to commit"
-        
-        # Menggunakan GITHUB_TOKEN untuk autentikasi saat push
         git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
