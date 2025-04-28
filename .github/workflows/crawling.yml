@@ -2,7 +2,7 @@ name: Run Notebook and Save CSV
 
 on:
   schedule:
-    - cron: '15 10 * * *'  # 10:10 UTC = 17:10 WIB
+    - cron: '20 10 * * *'  # 10:15 UTC = 17:15 WIB
   workflow_dispatch:
 
 jobs:
@@ -22,10 +22,12 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pandas requests papermill
+        pip install jupyter
+        python -m ipykernel install --user --name=python3 --display-name "Python 3"
 
     - name: Run the notebook
       run: |
-        papermill code.ipynb output.ipynb
+        papermill code.ipynb output.ipynb -k python3
 
     - name: Commit and Push CSV
       run: |
