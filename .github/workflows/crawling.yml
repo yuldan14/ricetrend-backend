@@ -2,7 +2,7 @@ name: Run Python Scripts and Save CSV
 
 on:
   schedule:
-    - cron: '40 12 * * *'  # 10:10 UTC = 17:10 WIB
+    - cron: '45 12 * * *'  # 10:10 UTC = 17:10 WIB
   workflow_dispatch:
 
 jobs:
@@ -35,6 +35,6 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add -f data_gabungan_dengan_rata2.csv  # Force add ignored files
+        git add -f medium_cikurubuk.csv medium_pancasila.csv premium_cikurubuk.csv premium_pancasila.csv data_gabungan_dengan_rata2.csv  # Force add ignored files
         git commit -m "Update CSV data [$(date +'%Y-%m-%d %H:%M:%S')]" || echo "No changes to commit"
         git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
