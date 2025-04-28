@@ -2,7 +2,7 @@ name: Run Python Scripts and Save CSV
 
 on:
   schedule:
-    - cron: '45 12 * * *'  # 10:10 UTC = 17:10 WIB
+    - cron: '0 23 * * *'  
   workflow_dispatch:
 
 jobs:
