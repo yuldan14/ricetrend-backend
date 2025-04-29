@@ -2,7 +2,7 @@ name: Run Python Scripts and Save CSV
 
 on:
   schedule:
-    - cron: '47 5 * * *'  
+    - cron: '47 5 * * *'  # Set waktu sesuai UTC
   workflow_dispatch:
 
 jobs:
@@ -31,6 +31,10 @@ jobs:
       run: |
         python ekstrak.py
 
+    - name: Run scrapping_bpn.py
+      run: |
+        python scrapping_bpn.py
+
     - name: Pull changes from remote before pushing
       run: |
         git pull origin main
@@ -39,6 +43,6 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add -f medium_cikurubuk.csv medium_pancasila.csv premium_cikurubuk.csv premium_pancasila.csv data_gabungan_dengan_rata2.csv  # Force add ignored files
+        git add -f medium_cikurubuk.csv medium_pancasila.csv premium_cikurubuk.csv premium_pancasila.csv data_gabungan_dengan_rata2.csv beras_premium_medium_prices.csv
         git commit -m "Update CSV data [$(date +'%Y-%m-%d %H:%M:%S')]" || echo "No changes to commit"
         git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
