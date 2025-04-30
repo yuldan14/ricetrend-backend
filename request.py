@@ -7,10 +7,10 @@ current_date = datetime.now().strftime('%Y-%m-%d')
 
 # Daftar URL dan nama file yang ingin disimpan
 urls = {
-    "medium_cikurubuk": f"https://svc-silinda.jabarprov.go.id/api/api/graphic_data/1/69/day/price/2021-03-28/{current_date}/0/market/-/eceran/null",
-    "medium_pancasila": f"https://svc-silinda.jabarprov.go.id/api/api/graphic_data/1/70/day/price/2021-03-28/{current_date}/0/market/-/eceran/null",
-    "premium_cikurubuk": f"https://svc-silinda.jabarprov.go.id/api/api/graphic_data/24/69/day/price/2021-03-28/{current_date}/0/market/-/eceran/null",
-    "premium_pancasila": f"https://svc-silinda.jabarprov.go.id/api/api/graphic_data/24/70/day/price/2021-03-28/{current_date}/0/market/-/eceran/null"
+    "medium_cikurubuk": f"https://svc-silinda.jabarprov.go.id/api/api/graphic_data/1/69/day/price/2022-02-09/{current_date}/0/market/-/eceran/null",
+    "medium_pancasila": f"https://svc-silinda.jabarprov.go.id/api/api/graphic_data/1/70/day/price/2022-02-09/{current_date}/0/market/-/eceran/null",
+    "premium_cikurubuk": f"https://svc-silinda.jabarprov.go.id/api/api/graphic_data/24/69/day/price/2022-02-09/{current_date}/0/market/-/eceran/null",
+    "premium_pancasila": f"https://svc-silinda.jabarprov.go.id/api/api/graphic_data/24/70/day/price/2022-02-09/{current_date}/0/market/-/eceran/null"
 }
 
 # Looping setiap URL

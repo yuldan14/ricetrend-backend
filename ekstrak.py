@@ -71,6 +71,7 @@ for name, filename in files.items():
             'date': pd.to_datetime(dates_series, errors='coerce')
         })
 
+        temp_df.dropna(subset=['date'], inplace=True)
         temp_df.set_index('date', inplace=True)
         all_data[name] = temp_df['value']
 
@@ -78,20 +79,28 @@ for name, filename in files.items():
         print(f"Gagal memproses {filename}: {e}")
 
 # Gabungkan semua data berdasarkan tanggal
-combined_df = pd.concat(all_data, axis=1).reset_index()
+combined_df = pd.concat(all_data, axis=1)
 
-# Hitung kolom gabungan medium dan premium
+# Buat date range dari min ke max
+full_date_range = pd.date_range(start=combined_df.index.min(), end=combined_df.index.max(), freq='D')
+
+# Isi tanggal yang hilang
+combined_df = combined_df.reindex(full_date_range)
+
+# Hitung rata-rata untuk kolom medium dan premium
 combined_df['medium'] = combined_df[['medium_cikurubuk', 'medium_pancasila']].mean(axis=1, skipna=True)
 combined_df['premium'] = combined_df[['premium_cikurubuk', 'premium_pancasila']].mean(axis=1, skipna=True)
 
-# Hapus kolom original
-combined_df = combined_df[['date', 'medium', 'premium']]
+# Ambil hanya kolom final
+combined_df = combined_df[['medium', 'premium']]
+combined_df.reset_index(inplace=True)
+combined_df.rename(columns={'index': 'date'}, inplace=True)
 
-# Imputasi nilai NaN dan 0
+# Imputasi nilai kosong
 impute_column(combined_df, 'medium')
 impute_column(combined_df, 'premium')
 
-# Simpan hasil akhir
+# Simpan hasil
 combined_filename = 'data_gabungan_dengan_rata2.csv'
 combined_df.to_csv(combined_filename, index=False, encoding='utf-8-sig')
-print(f"✅ Data gabungan bersih berhasil disimpan ke {combined_filename}")
+print(f"✅ Data gabungan lengkap disimpan ke {combined_filename}")
