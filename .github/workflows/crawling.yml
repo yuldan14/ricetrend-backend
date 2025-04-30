@@ -34,6 +34,9 @@ jobs:
     - name: Run scrapping_bpn.py
       run: |
         python scrapping_bpn.py
+    - name: Run sql.py
+      run: |
+        python sql.py
 
     - name: Pull changes from remote before pushing
       run: |
@@ -43,6 +46,6 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add -f medium_cikurubuk.csv medium_pancasila.csv premium_cikurubuk.csv premium_pancasila.csv data_gabungan_dengan_rata2.csv processed_beras_prices.csv
+        git add -f medium_cikurubuk.csv medium_pancasila.csv premium_cikurubuk.csv premium_pancasila.csv data_gabungan_dengan_rata2.csv processed_beras_prices.csv data_harga.db
         git commit -m "Update CSV data [$(date +'%Y-%m-%d %H:%M:%S')]" || echo "No changes to commit"
         git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
