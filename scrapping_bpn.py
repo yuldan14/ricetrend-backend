@@ -1,100 +1,99 @@
 import requests
 import csv
+import os
 from datetime import datetime
+import pandas as pd
 
-# Define the API URL
+# URL API
 url = "https://api-panelhargav2.badanpangan.go.id/api/front/harga-pangan-informasi"
 
-# Define the parameters for the API request
+# Parameter API
 params = {
-    "province_id": "12",  # ID provinsi
-    "city_id": "184",     # ID kota
-    "level_harga_id": "3" # ID tingkat harga (misalnya 3 = eceran)
+    "province_id": "12",  # Contoh: Jawa Barat
+    "city_id": "184",     # Contoh: Kota Bandung
+    "level_harga_id": "3" # Eceran
 }
 
-# Nama file CSV untuk menyimpan data
-csv_file_name = 'beras_premium_medium_prices.csv'
+# Nama file CSV
+csv_file_name = 'processed_beras_prices.csv'
 
-# Ambil tanggal hari ini
+# Format tanggal
 today_date = datetime.today()
+date_str = today_date.strftime('%Y-%m-%d')
 
-# Format tanggal sesuai kebutuhan API dan penyimpanan
-def get_date_string(date):
-    return date.strftime('%Y-%m-%d')
-
-# Fungsi untuk mengecek apakah data dengan tanggal dan nama komoditas sudah ada
-def is_data_entry_already_in_csv(date, name, file_name):
-    try:
-        with open(file_name, 'r', encoding='utf-8') as file:
-            reader = csv.reader(file)
-            next(reader, None)  # Lewati header
-            for row in reader:
-                if row and row[0] == date and row[1] == name:
-                    return True
-    except FileNotFoundError:
+# Fungsi untuk cek apakah data tanggal sudah ada
+def is_date_already_in_csv(date, file_name):
+    if not os.path.exists(file_name):
         return False
+    with open(file_name, 'r', encoding='utf-8') as file:
+        reader = csv.reader(file)
+        next(reader, None)  # skip header
+        for row in reader:
+            if row and row[0] == date:
+                return True
     return False
 
-# Siapkan list untuk menampung data hasil crawl
-price_data = []
+# Tambahkan parameter tanggal
+params['date'] = date_str
 
-# Tambahkan parameter tanggal pada request
-params['date'] = get_date_string(today_date)
-
-# Lakukan request ke API
+# Ambil data dari API
 response = requests.get(url, params=params)
 
-# Jika request sukses
 if response.status_code == 200:
     data = response.json()
-
-    # Jika status API sukses
     if data.get('status') == 'success':
         commodities = data.get('data', [])
 
-        # Ambil hanya Beras Premium dan Beras Medium
+        # Ambil harga today untuk Beras Medium dan Premium
+        medium_price = None
+        premium_price = None
+
         for item in commodities:
-            if 'name' in item and item['name'] in ['Beras Premium', 'Beras Medium']:
-                date_str = get_date_string(today_date)
-                name = item['name']
+            if item.get('name') == 'Beras Medium':
+                medium_price = item.get('today', None)
+            elif item.get('name') == 'Beras Premium':
+                premium_price = item.get('today', None)
 
-                # Cek apakah data untuk komoditas dan tanggal tersebut sudah ada
-                if not is_data_entry_already_in_csv(date_str, name, csv_file_name):
-                    price_today = item['today']
-                    price_yesterday = item['yesterday']
-                    gap = item['gap']
-                    gap_percentage = item['gap_percentage']
-                    gap_change = item['gap_change']
+        # Simpan jika belum ada
+        if not is_date_already_in_csv(date_str, csv_file_name):
+            try:
+                with open(csv_file_name, 'a', newline='', encoding='utf-8') as file:
+                    writer = csv.writer(file)
 
-                    price_data.append([
-                        date_str, name, price_today, price_yesterday,
-                        gap, gap_percentage, gap_change
-                    ])
-                else:
-                    print(f"Data untuk {name} tanggal {date_str} sudah ada.")
+                    # Tulis header jika file kosong
+                    if file.tell() == 0:
+                        writer.writerow(['Date', 'Medium', 'Premium'])
+
+                    writer.writerow([date_str, medium_price, premium_price])
+                    print("✅ Data berhasil ditambahkan.")
+            except Exception as e:
+                print(f"❌ Gagal menulis ke file: {e}")
+        else:
+            print(f"ℹ️ Data untuk tanggal {date_str} sudah ada.")
     else:
-        print(f"API tidak mengembalikan data yang diharapkan untuk {get_date_string(today_date)}")
+        print("❌ Data tidak tersedia dari API.")
 else:
-    print(f"Gagal mengambil data: status code {response.status_code}")
+    print(f"❌ Gagal request API: status code {response.status_code}")
 
-# Jika ada data baru yang siap disimpan
-if price_data:
-    try:
-        with open(csv_file_name, 'a', newline='', encoding='utf-8') as file:
-            writer = csv.writer(file)
+# === Langkah Imputasi Data ===
+import numpy as np
 
-            # Jika file kosong, tulis header
-            if file.tell() == 0:
-                writer.writerow([
-                    'Date', 'Commodity Name', 'Price Today (IDR)',
-                    'Price Yesterday (IDR)', 'Price Change (IDR)',
-                    'Price Change (%)', 'Change Direction'
-                ])
+try:
+    df = pd.read_csv(csv_file_name)
 
-            # Tulis data
-            writer.writerows(price_data)
-        print("Data berhasil ditambahkan ke file CSV.")
-    except Exception as e:
-        print(f"Gagal menulis ke file CSV: {e}")
-else:
-    print("Tidak ada data baru untuk ditambahkan.")
+    # Bersihkan data dan konversi ke float
+    df['Medium'] = pd.to_numeric(df['Medium'], errors='coerce')
+    df['Premium'] = pd.to_numeric(df['Premium'], errors='coerce')
+
+    # Ganti nilai 0 dengan NaN
+    df[['Medium', 'Premium']] = df[['Medium', 'Premium']].replace(0, np.nan)
+
+    # Interpolasi linear antar nilai
+    df[['Medium', 'Premium']] = df[['Medium', 'Premium']].interpolate(method='linear', limit_direction='both')
+
+    # Simpan kembali hasil imputasi
+    df.to_csv(csv_file_name, index=False)
+    print("🧹 Imputasi selesai. Nilai kosong dan 0 sudah diganti dengan interpolasi antar nilai.")
+except Exception as e:
+    print(f"❌ Gagal melakukan imputasi: {e}")
+
