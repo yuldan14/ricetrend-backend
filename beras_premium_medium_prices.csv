@@ -2941,3 +2941,5 @@ Date,Commodity Name,Price Today (IDR),Price Yesterday (IDR),Price Change (IDR),P
 2025-04-28,Beras Medium,14000,14000,0,0,no_change
 2025-04-29,Beras Premium,14800,14833,-33,-0.22,down
 2025-04-29,Beras Medium,14000,14000,0,0,no_change
+2025-04-30,Beras Premium,14833,14800,33,0.22,up
+2025-04-30,Beras Medium,14000,14000,0,0,no_change
