@@ -79,6 +79,7 @@ combined_df = combined_df.reset_index()
 combined_df['medium'] = combined_df[['medium_cikurubuk', 'medium_pancasila']].mean(axis=1, skipna=True)
 combined_df['premium'] = combined_df[['premium_cikurubuk', 'premium_pancasila']].mean(axis=1, skipna=True)
 
+combined_df = combined_df.drop(columns=['medium_cikurubuk', 'medium_pancasila', 'premium_cikurubuk', 'premium_pancasila'])
 # Simpan hasil ke CSV
 combined_filename = 'data_gabungan_dengan_rata2.csv'
 combined_df.to_csv(combined_filename, index=False, encoding='utf-8-sig')
