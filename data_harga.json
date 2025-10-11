@@ -10718,5 +10718,13 @@
         "premium_silinda": 14750.0,
         "medium_bapanas": 13667.0,
         "premium_bapanas": 14833.0
+    },
+    {
+        "id": 210153,
+        "date": "2025-10-11",
+        "medium_silinda": 13750.0,
+        "premium_silinda": 14750.0,
+        "medium_bapanas": 13500.0,
+        "premium_bapanas": 14750.0
     }
 ]
