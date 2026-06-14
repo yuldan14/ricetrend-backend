@@ -72,6 +72,9 @@ def parse_prices(payload):
 
 
 def fetch_prices(date):
+    if not os.environ.get("BAPANAS_API_KEY"):
+        raise ValueError("BAPANAS_API_KEY belum dikonfigurasi.")
+
     params = {
         "province_id": "12",
         "city_id": "184",

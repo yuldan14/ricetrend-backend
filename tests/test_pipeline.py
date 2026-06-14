@@ -1,7 +1,9 @@
 import math
+import os
 import sys
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 import pandas as pd
 
@@ -9,7 +11,7 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from convert_to_json import normalize_price
-from scrapping_bpn import parse_prices
+from scrapping_bpn import fetch_prices, parse_prices
 from sql import build_combined
 
 
@@ -25,6 +27,14 @@ class PipelineTests(unittest.TestCase):
 
         with self.assertRaisesRegex(ValueError, "kosong"):
             parse_prices(payload)
+
+    def test_fetch_skips_network_without_api_key(self):
+        environment = os.environ.copy()
+        environment.pop("BAPANAS_API_KEY", None)
+
+        with patch.dict(os.environ, environment, clear=True):
+            with self.assertRaisesRegex(ValueError, "belum dikonfigurasi"):
+                fetch_prices("2026-06-14")
 
     def test_combined_preserves_missing_source_price(self):
         silinda = pd.DataFrame(
