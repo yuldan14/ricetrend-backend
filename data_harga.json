@@ -10898,8 +10898,8 @@
     {
         "id": 239908,
         "date": "2025-11-02",
-        "medium_silinda": NaN,
-        "premium_silinda": NaN,
+        "medium_silinda": null,
+        "premium_silinda": null,
         "medium_bapanas": 13500.0,
         "premium_bapanas": 14500.0
     },
@@ -11020,1495 +11020,1495 @@
         "date": "2025-11-17",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 261852,
         "date": "2025-11-18",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 263232,
         "date": "2025-11-19",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 264613,
         "date": "2025-11-20",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 265995,
         "date": "2025-11-21",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 267378,
         "date": "2025-11-22",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 268762,
         "date": "2025-11-23",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 270147,
         "date": "2025-11-24",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 271533,
         "date": "2025-11-25",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 272920,
         "date": "2025-11-26",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 274308,
         "date": "2025-11-27",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 275697,
         "date": "2025-11-28",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 277087,
         "date": "2025-11-29",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 278478,
         "date": "2025-11-30",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 279870,
         "date": "2025-12-01",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 281263,
         "date": "2025-12-02",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 282657,
         "date": "2025-12-03",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 284052,
         "date": "2025-12-04",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 285448,
         "date": "2025-12-05",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 286845,
         "date": "2025-12-06",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 288243,
         "date": "2025-12-07",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 289642,
         "date": "2025-12-08",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 291042,
         "date": "2025-12-09",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 292443,
         "date": "2025-12-10",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 293845,
         "date": "2025-12-11",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 295248,
         "date": "2025-12-12",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 296652,
         "date": "2025-12-13",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 298057,
         "date": "2025-12-14",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 299463,
         "date": "2025-12-15",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 300870,
         "date": "2025-12-16",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 302278,
         "date": "2025-12-17",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 303687,
         "date": "2025-12-18",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 305097,
         "date": "2025-12-19",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 306508,
         "date": "2025-12-20",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 309331,
         "date": "2025-12-21",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 309332,
         "date": "2025-12-22",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 310746,
         "date": "2025-12-23",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 312161,
         "date": "2025-12-24",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 314992,
         "date": "2025-12-25",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 314993,
         "date": "2025-12-26",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 316411,
         "date": "2025-12-27",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 317830,
         "date": "2025-12-28",
         "medium_silinda": 13250.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 319250,
         "date": "2025-12-29",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 320671,
         "date": "2025-12-30",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 322093,
         "date": "2025-12-31",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 323516,
         "date": "2026-01-01",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 323517,
         "date": "2026-01-02",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 324942,
         "date": "2026-01-03",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 326368,
         "date": "2026-01-04",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 327795,
         "date": "2026-01-05",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 329223,
         "date": "2026-01-06",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 330652,
         "date": "2026-01-07",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 332082,
         "date": "2026-01-08",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 333513,
         "date": "2026-01-09",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 334945,
         "date": "2026-01-10",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 336378,
         "date": "2026-01-11",
         "medium_silinda": 13250.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 337812,
         "date": "2026-01-12",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 339247,
         "date": "2026-01-13",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 340683,
         "date": "2026-01-14",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 342120,
         "date": "2026-01-15",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 343558,
         "date": "2026-01-16",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 344997,
         "date": "2026-01-17",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 346437,
         "date": "2026-01-18",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 347878,
         "date": "2026-01-19",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 349320,
         "date": "2026-01-20",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 350763,
         "date": "2026-01-21",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 352207,
         "date": "2026-01-22",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 353652,
         "date": "2026-01-23",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 355098,
         "date": "2026-01-24",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 356545,
         "date": "2026-01-25",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 357993,
         "date": "2026-01-26",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 359442,
         "date": "2026-01-27",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 360892,
         "date": "2026-01-28",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 362343,
         "date": "2026-01-29",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 363795,
         "date": "2026-01-30",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 365248,
         "date": "2026-01-31",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 366702,
         "date": "2026-02-01",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 368157,
         "date": "2026-02-02",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 369613,
         "date": "2026-02-03",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 371070,
         "date": "2026-02-04",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 372528,
         "date": "2026-02-05",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 373987,
         "date": "2026-02-06",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 375447,
         "date": "2026-02-07",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 376908,
         "date": "2026-02-08",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 378370,
         "date": "2026-02-09",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 379833,
         "date": "2026-02-10",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 381297,
         "date": "2026-02-11",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 382762,
         "date": "2026-02-12",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 384228,
         "date": "2026-02-13",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 385695,
         "date": "2026-02-14",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 387163,
         "date": "2026-02-15",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 388632,
         "date": "2026-02-16",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 390102,
         "date": "2026-02-17",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 391573,
         "date": "2026-02-18",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 393045,
         "date": "2026-02-19",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 394518,
         "date": "2026-02-20",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 395992,
         "date": "2026-02-21",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 397467,
         "date": "2026-02-22",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 398943,
         "date": "2026-02-23",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 400420,
         "date": "2026-02-24",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 401898,
         "date": "2026-02-25",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 403377,
         "date": "2026-02-26",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 404857,
         "date": "2026-02-27",
         "medium_silinda": 14000.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 407818,
         "date": "2026-02-28",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 407819,
         "date": "2026-03-01",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 409302,
         "date": "2026-03-02",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 410786,
         "date": "2026-03-03",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 412271,
         "date": "2026-03-04",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 412272,
         "date": "2026-03-05",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 413759,
         "date": "2026-03-06",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 415247,
         "date": "2026-03-07",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 416736,
         "date": "2026-03-08",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 418226,
         "date": "2026-03-09",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 419717,
         "date": "2026-03-10",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 421209,
         "date": "2026-03-11",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 422702,
         "date": "2026-03-12",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 424196,
         "date": "2026-03-13",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 424197,
         "date": "2026-03-14",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 425693,
         "date": "2026-03-15",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 427190,
         "date": "2026-03-16",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 428688,
         "date": "2026-03-17",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 430187,
         "date": "2026-03-18",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 431687,
         "date": "2026-03-19",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 433188,
         "date": "2026-03-20",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 436191,
         "date": "2026-03-21",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 436192,
         "date": "2026-03-22",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 437696,
         "date": "2026-03-23",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 439201,
         "date": "2026-03-24",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 440707,
         "date": "2026-03-25",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 442214,
         "date": "2026-03-26",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 443722,
         "date": "2026-03-27",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 445231,
         "date": "2026-03-28",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 446741,
         "date": "2026-03-29",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 448252,
         "date": "2026-03-30",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 449764,
         "date": "2026-03-31",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 451277,
         "date": "2026-04-01",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 452791,
         "date": "2026-04-02",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 454306,
         "date": "2026-04-03",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 455822,
         "date": "2026-04-04",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 457339,
         "date": "2026-04-05",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 458857,
         "date": "2026-04-06",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 460376,
         "date": "2026-04-07",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 461896,
         "date": "2026-04-08",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 463417,
         "date": "2026-04-09",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 464939,
         "date": "2026-04-10",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 466462,
         "date": "2026-04-11",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 467986,
         "date": "2026-04-12",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 469511,
         "date": "2026-04-13",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 471037,
         "date": "2026-04-14",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 472564,
         "date": "2026-04-15",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 474092,
         "date": "2026-04-16",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 475621,
         "date": "2026-04-17",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 477151,
         "date": "2026-04-18",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 478682,
         "date": "2026-04-19",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 480214,
         "date": "2026-04-20",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 481747,
         "date": "2026-04-21",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 483281,
         "date": "2026-04-22",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 484816,
         "date": "2026-04-23",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 486352,
         "date": "2026-04-24",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 487889,
         "date": "2026-04-25",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 489427,
         "date": "2026-04-26",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 490966,
         "date": "2026-04-27",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 492506,
         "date": "2026-04-28",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 494047,
         "date": "2026-04-29",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 495589,
         "date": "2026-04-30",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 497132,
         "date": "2026-05-01",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 500219,
         "date": "2026-05-02",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 500220,
         "date": "2026-05-03",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 501766,
         "date": "2026-05-04",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 504859,
         "date": "2026-05-05",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 504860,
         "date": "2026-05-06",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 506409,
         "date": "2026-05-07",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 507959,
         "date": "2026-05-08",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 509510,
         "date": "2026-05-09",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 511062,
         "date": "2026-05-10",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 514167,
         "date": "2026-05-11",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 514168,
         "date": "2026-05-12",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 515723,
         "date": "2026-05-13",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 520389,
         "date": "2026-05-14",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 520390,
         "date": "2026-05-15",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 520391,
         "date": "2026-05-16",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 521950,
         "date": "2026-05-17",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 523510,
         "date": "2026-05-18",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 525071,
         "date": "2026-05-19",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 526633,
         "date": "2026-05-20",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 528196,
         "date": "2026-05-21",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     },
     {
         "id": 529760,
         "date": "2026-05-22",
         "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
-        "medium_bapanas": NaN,
-        "premium_bapanas": NaN
+        "medium_bapanas": null,
+        "premium_bapanas": null
     }
 ]

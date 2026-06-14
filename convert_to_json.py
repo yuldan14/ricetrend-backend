@@ -1,53 +1,84 @@
-import sqlite3
 import json
-import os
+import math
+import sqlite3
+from pathlib import Path
 
-# Path ke database dan lokasi penyimpanan JSON
-DB_PATH = 'data_harga.db'
-JSON_PATH = 'data_harga.json'
+BASE_DIR = Path(__file__).resolve().parent
+DB_PATH = BASE_DIR / 'data_harga.db'
+JSON_PATH = BASE_DIR / 'data_harga.json'
+FRONTEND_JSON_PATH = BASE_DIR.parent / 'frontend' / 'public' / 'data_harga.json'
+TABLE_NAME = 'gabungan_harga_beras'
+PRICE_COLUMNS = {'medium_silinda', 'premium_silinda', 'medium_bapanas', 'premium_bapanas'}
+
+
+def normalize_price(value):
+    if value in (None, ''):
+        return None
+
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return None
+
+    return number if math.isfinite(number) else None
+
+
+def normalize_id(value):
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return value
+
+
+def normalize_value(column, value):
+    if column in PRICE_COLUMNS:
+        return normalize_price(value)
+
+    if column == 'id':
+        return normalize_id(value)
+
+    return value if value is not None else ''
+
+
+def load_rows():
+    with sqlite3.connect(DB_PATH) as conn:
+        cursor = conn.cursor()
+        cursor.execute(
+            """
+            SELECT name
+            FROM sqlite_master
+            WHERE type='table' AND name=?;
+            """,
+            (TABLE_NAME,),
+        )
+
+        if not cursor.fetchone():
+            raise ValueError(f"Tabel '{TABLE_NAME}' tidak ditemukan di database.")
+
+        cursor.execute(f'SELECT * FROM {TABLE_NAME} ORDER BY date')
+        column_names = [description[0] for description in cursor.description]
+
+        return [
+            {
+                column_names[index]: normalize_value(column_names[index], value)
+                for index, value in enumerate(row)
+            }
+            for row in cursor.fetchall()
+        ]
+
+
+def write_json(path, data):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open('w', encoding='utf-8') as json_file:
+        json.dump(data, json_file, indent=4, allow_nan=False)
+        json_file.write('\n')
 
 
 try:
-    # Menghubungkan ke database SQLite dengan menggunakan 'with' untuk penanganan yang lebih baik
-    with sqlite3.connect(DB_PATH) as conn:
-        cursor = conn.cursor()
-
-        # Mengecek apakah tabel `gabungan_harga_beras` ada
-        cursor.execute("""
-        SELECT name 
-        FROM sqlite_master 
-        WHERE type='table' AND name='gabungan_harga_beras';
-        """)
-        table_exists = cursor.fetchone()
-
-        if not table_exists:
-            raise ValueError("Tabel 'gabungan_harga_beras' tidak ditemukan di database.")
-
-        # Menentukan query untuk memilih semua data dari tabel
-        cursor.execute("SELECT * FROM gabungan_harga_beras")
-        rows = cursor.fetchall()
-
-        # Mendapatkan nama kolom untuk JSON
-        column_names = [description[0] for description in cursor.description]
-
-        # Daftar kolom yang perlu dikonversi ke float
-        konversi_kolom = ["medium_silinda", "premium_silinda", "medium_bapanas", "premium_bapanas"]
-
-        # Mengubah hasil query menjadi format dictionary
-        data = []
-        for row in rows:
-            row_data = {
-                column_names[i]: (float(value) if column_names[i] in konversi_kolom and value is not None else value or "")
-                for i, value in enumerate(row)
-            }
-            data.append(row_data)
-
-    # Menyimpan hasil ke file JSON menggunakan 'with' untuk memastikan file ditutup setelah proses selesai
-    with open(JSON_PATH, 'w') as json_file:
-        json.dump(data, json_file, indent=4)
-
-    print(f"Konversi berhasil! Data disimpan di {JSON_PATH}")
-
+    data = load_rows()
+    write_json(JSON_PATH, data)
+    write_json(FRONTEND_JSON_PATH, data)
+    print(f"Konversi berhasil! Data disimpan di {JSON_PATH} dan {FRONTEND_JSON_PATH}")
 except sqlite3.Error as e:
     print(f"Terjadi kesalahan pada database: {e}")
 except Exception as e:

@@ -1,54 +1,127 @@
-name: Run Python Scripts and Save CSV
+name: Refresh Rice Price Dataset
 
 on:
   schedule:
-    - cron: '05 5 * * *'  # Set waktu sesuai UTC
+    - cron: "5 5 * * *" # Daily at 05:05 UTC (12:05 WIB).
   workflow_dispatch:
 
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-rice-price-dataset
+  cancel-in-progress: false
+
 jobs:
-  run-scripts:
+  refresh:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout backend
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install pandas requests
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
 
-    - name: Run request.py
-      run: |
-        python request.py
+      - name: Check Python syntax
+        run: |
+          python -m compileall -q \
+            request.py \
+            ekstrak.py \
+            scrapping_bpn.py \
+            sql.py \
+            convert_to_json.py
 
-    - name: Run ekstrak.py
-      run: |
-        python ekstrak.py
+      - name: Fetch Silinda prices
+        run: python request.py
 
-    - name: Run scrapping_bpn.py
-      run: |
-        python scrapping_bpn.py
-    - name: Run sql.py
-      run: |
-        python sql.py
-    - name: Run convert_to_json.py
-      run: |
-        python convert_to_json.py
+      - name: Aggregate Silinda prices
+        run: python ekstrak.py
 
-    - name: Pull changes from remote before pushing
-      run: |
-        git pull origin main
+      - name: Fetch Bapanas prices
+        run: python scrapping_bpn.py
 
-    - name: Commit and Push CSV
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add -f medium_cikurubuk.csv medium_pancasila.csv premium_cikurubuk.csv premium_pancasila.csv data_gabungan_dengan_rata2.csv processed_beras_prices.csv data_harga.db data_harga.json
-        git commit -m "Update CSV data [$(date +'%Y-%m-%d %H:%M:%S')]" || echo "No changes to commit"
-        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+      - name: Update SQLite dataset
+        run: python sql.py
+
+      - name: Export JSON dataset
+        run: |
+          rm -f data_harga.json
+          python convert_to_json.py
+          test -s data_harga.json
+
+      - name: Validate exported dataset
+        shell: bash
+        run: |
+          jq -e '
+            type == "array" and
+            length > 0 and
+            all(.[];
+              has("id") and
+              has("date") and
+              has("medium_silinda") and
+              has("premium_silinda") and
+              has("medium_bapanas") and
+              has("premium_bapanas") and
+              (.date | type == "string" and length > 0)
+            )
+          ' data_harga.json > /dev/null
+
+      - name: Commit and push generated data
+        id: publish
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f -- \
+            medium_cikurubuk.csv \
+            medium_pancasila.csv \
+            premium_cikurubuk.csv \
+            premium_pancasila.csv \
+            data_gabungan_dengan_rata2.csv \
+            processed_beras_prices.csv \
+            data_harga.db \
+            data_harga.json
+
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No generated data changes."
+            exit 0
+          fi
+
+          git commit -m "chore(data): refresh rice prices [skip ci]"
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Notify frontend sync workflow
+        if: steps.publish.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.FRONTEND_REPO_TOKEN }}
+          FRONTEND_REPOSITORY: yuldan14/RiceTrend
+          BACKEND_SHA: ${{ steps.publish.outputs.commit_sha }}
+        shell: bash
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "FRONTEND_REPO_TOKEN is not configured; scheduled frontend sync remains active."
+            exit 0
+          fi
+
+          gh api \
+            --method POST \
+            "repos/${FRONTEND_REPOSITORY}/dispatches" \
+            -f event_type=backend-data-updated \
+            -f "client_payload[backend_sha]=${BACKEND_SHA}"
