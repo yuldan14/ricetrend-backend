@@ -9483,7 +9483,7 @@
         "id": 12992,
         "date": "2025-05-09",
         "medium_silinda": 14000.0,
-        "premium_silinda": 14500.0,
+        "premium_silinda": 14750.0,
         "medium_bapanas": 14000.0,
         "premium_bapanas": 14800.0
     },
@@ -9731,7 +9731,7 @@
         "id": 50254,
         "date": "2025-06-09",
         "medium_silinda": 14000.0,
-        "premium_silinda": 14500.0,
+        "premium_silinda": 14750.0,
         "medium_bapanas": 14000.0,
         "premium_bapanas": 14750.0
     },
@@ -9771,7 +9771,7 @@
         "id": 56354,
         "date": "2025-06-14",
         "medium_silinda": 14000.0,
-        "premium_silinda": 14500.0,
+        "premium_silinda": 14750.0,
         "medium_bapanas": 14000.0,
         "premium_bapanas": 15000.0
     },
@@ -10554,7 +10554,7 @@
     {
         "id": 182202,
         "date": "2025-09-20",
-        "medium_silinda": 13500.0,
+        "medium_silinda": 13750.0,
         "premium_silinda": 14750.0,
         "medium_bapanas": 13000.0,
         "premium_bapanas": 14500.0
@@ -10571,7 +10571,7 @@
         "id": 184845,
         "date": "2025-09-22",
         "medium_silinda": 13750.0,
-        "premium_silinda": 14500.0,
+        "premium_silinda": 14750.0,
         "medium_bapanas": 14000.0,
         "premium_bapanas": 15000.0
     },
@@ -10747,7 +10747,7 @@
         "id": 214182,
         "date": "2025-10-14",
         "medium_silinda": 13750.0,
-        "premium_silinda": 15000.0,
+        "premium_silinda": 14750.0,
         "medium_bapanas": 13500.0,
         "premium_bapanas": 14750.0
     },
@@ -10763,7 +10763,7 @@
         "id": 216873,
         "date": "2025-10-16",
         "medium_silinda": 13750.0,
-        "premium_silinda": 14500.0,
+        "premium_silinda": 14750.0,
         "medium_bapanas": 14000.0,
         "premium_bapanas": 15000.0
     },
@@ -10898,8 +10898,8 @@
     {
         "id": 239908,
         "date": "2025-11-02",
-        "medium_silinda": null,
-        "premium_silinda": null,
+        "medium_silinda": 13500.0,
+        "premium_silinda": 14500.0,
         "medium_bapanas": 13500.0,
         "premium_bapanas": 14500.0
     },
@@ -11346,7 +11346,7 @@
     {
         "id": 317830,
         "date": "2025-12-28",
-        "medium_silinda": 13250.0,
+        "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
         "medium_bapanas": null,
         "premium_bapanas": null
@@ -11458,7 +11458,7 @@
     {
         "id": 336378,
         "date": "2026-01-11",
-        "medium_silinda": 13250.0,
+        "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
         "medium_bapanas": null,
         "premium_bapanas": null
@@ -11834,7 +11834,7 @@
     {
         "id": 404857,
         "date": "2026-02-27",
-        "medium_silinda": 14000.0,
+        "medium_silinda": 13500.0,
         "premium_silinda": 14500.0,
         "medium_bapanas": null,
         "premium_bapanas": null

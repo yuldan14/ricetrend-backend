@@ -74,12 +74,19 @@ def write_json(path, data):
         json_file.write('\n')
 
 
-try:
-    data = load_rows()
-    write_json(JSON_PATH, data)
-    write_json(FRONTEND_JSON_PATH, data)
-    print(f"Konversi berhasil! Data disimpan di {JSON_PATH} dan {FRONTEND_JSON_PATH}")
-except sqlite3.Error as e:
-    print(f"Terjadi kesalahan pada database: {e}")
-except Exception as e:
-    print(f"Terjadi kesalahan: {e}")
+def main():
+    try:
+        data = load_rows()
+        write_json(JSON_PATH, data)
+        write_json(FRONTEND_JSON_PATH, data)
+        print(f"Konversi berhasil! Data disimpan di {JSON_PATH} dan {FRONTEND_JSON_PATH}")
+    except sqlite3.Error as error:
+        print(f"Terjadi kesalahan pada database: {error}")
+        raise
+    except Exception as error:
+        print(f"Terjadi kesalahan: {error}")
+        raise
+
+
+if __name__ == "__main__":
+    main()

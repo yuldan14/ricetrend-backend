@@ -51,6 +51,8 @@ jobs:
         run: python ekstrak.py
 
       - name: Fetch Bapanas prices
+        env:
+          BAPANAS_API_KEY: ${{ secrets.BAPANAS_API_KEY }}
         run: python scrapping_bpn.py
 
       - name: Update SQLite dataset
@@ -75,7 +77,11 @@ jobs:
               has("premium_silinda") and
               has("medium_bapanas") and
               has("premium_bapanas") and
-              (.date | type == "string" and length > 0)
+              (.date | type == "string" and length > 0) and
+              ((.medium_silinda | type == "number") or .medium_silinda == null) and
+              ((.premium_silinda | type == "number") or .premium_silinda == null) and
+              ((.medium_bapanas | type == "number") or .medium_bapanas == null) and
+              ((.premium_bapanas | type == "number") or .premium_bapanas == null)
             )
           ' data_harga.json > /dev/null
 

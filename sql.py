@@ -1,66 +1,121 @@
-import pandas as pd
 import sqlite3
+from pathlib import Path
 
-# Baca data CSV
-df_bapanas = pd.read_csv('processed_beras_prices.csv')
-df_silinda = pd.read_csv('data_gabungan_dengan_rata2.csv')
+import numpy as np
+import pandas as pd
 
-# Menstandarkan nama kolom untuk konsistensi (gunakan huruf kecil)
-df_bapanas.columns = df_bapanas.columns.str.lower()  # ubah semua ke huruf kecil
-df_silinda.columns = df_silinda.columns.str.lower()
 
-# Pastikan kolom sesuai, misalnya 'date', 'medium', 'premium' di kedua dataset
-df_bapanas = df_bapanas.rename(columns={
-    'date': 'date',
-    'medium': 'medium',
-    'premium': 'premium'
-})
+BASE_DIR = Path(__file__).resolve().parent
+DB_PATH = BASE_DIR / "data_harga.db"
+SILINDA_PATH = BASE_DIR / "data_gabungan_dengan_rata2.csv"
+BAPANAS_PATH = BASE_DIR / "processed_beras_prices.csv"
+TABLE_NAME = "gabungan_harga_beras"
+PRICE_COLUMNS = [
+    "medium_silinda",
+    "premium_silinda",
+    "medium_bapanas",
+    "premium_bapanas",
+]
 
-df_silinda = df_silinda.rename(columns={
-    'date': 'date',
-    'medium': 'medium',
-    'premium': 'premium'
-})
 
-# Menggabungkan kedua data berdasarkan 'date' menggunakan join outer
-df_combined = pd.merge(df_silinda, df_bapanas, on='date', how='outer', suffixes=('_silinda', '_bapanas'))
+def load_source(path):
+    dataframe = pd.read_csv(path)
+    dataframe.columns = dataframe.columns.str.lower()
 
-# Koneksi ke SQLite
-conn = sqlite3.connect('data_harga.db')
-cursor = conn.cursor()
+    required_columns = {"date", "medium", "premium"}
+    missing_columns = required_columns.difference(dataframe.columns)
+    if missing_columns:
+        raise ValueError(f"Kolom {path.name} tidak lengkap: {sorted(missing_columns)}")
 
-# Fungsi untuk membuat tabel jika belum ada
-def create_table_if_not_exists(table_name, columns):
-    columns_sql = ", ".join([f"{col} TEXT" for col in columns])
-    create_query = f"""
-        CREATE TABLE IF NOT EXISTS {table_name} (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            {columns_sql},
-            UNIQUE(date)  -- Hindari duplikat berdasarkan tanggal
-        );
-    """
-    cursor.execute(create_query)
+    dataframe = dataframe[["date", "medium", "premium"]].copy()
+    dataframe["date"] = pd.to_datetime(dataframe["date"], errors="coerce")
+    dataframe = dataframe.dropna(subset=["date"])
+    dataframe["date"] = dataframe["date"].dt.strftime("%Y-%m-%d")
 
-# Tentukan nama tabel untuk disimpan
-table_name = 'gabungan_harga_beras'
+    for column in ("medium", "premium"):
+        dataframe[column] = pd.to_numeric(dataframe[column], errors="coerce")
+        dataframe.loc[dataframe[column] <= 0, column] = np.nan
 
-# Buat tabel jika belum ada
-create_table_if_not_exists(table_name, df_combined.columns)
+    return dataframe.drop_duplicates(subset=["date"], keep="last").sort_values("date")
 
-# Insert data ke SQLite
-inserted = 0
-for _, row in df_combined.iterrows():
-    placeholders = ", ".join(["?"] * len(row))
-    columns = ", ".join(row.index)
-    values = tuple(row.astype(str))  # Convert semua nilai ke string
-    try:
-        cursor.execute(f"INSERT OR IGNORE INTO {table_name} ({columns}) VALUES ({placeholders})", values)
-        inserted += cursor.rowcount
-    except Exception as e:
-        print(f"Error saat insert baris: {e}")
 
-# Commit perubahan dan tutup koneksi
-conn.commit()
-conn.close()
+def build_combined(silinda, bapanas):
+    combined = pd.merge(
+        silinda,
+        bapanas,
+        on="date",
+        how="outer",
+        suffixes=("_silinda", "_bapanas"),
+    ).sort_values("date")
 
-print(f"{inserted} baris baru berhasil ditambahkan ke tabel '{table_name}'.")
+    for column in PRICE_COLUMNS:
+        combined.loc[~np.isfinite(combined[column]), column] = np.nan
+
+    return combined[["date", *PRICE_COLUMNS]]
+
+
+def replace_table(dataframe):
+    temporary_table = f"{TABLE_NAME}_new"
+
+    with sqlite3.connect(DB_PATH) as connection:
+        table_exists = connection.execute(
+            "SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = ?",
+            (TABLE_NAME,),
+        ).fetchone()
+        existing_ids = {}
+        if table_exists:
+            existing_ids = dict(
+                connection.execute(f"SELECT date, id FROM {TABLE_NAME}").fetchall()
+            )
+
+        next_id = max(existing_ids.values(), default=0) + 1
+        rows = []
+        for row in dataframe.itertuples(index=False, name=None):
+            date = row[0]
+            row_id = existing_ids.get(date)
+            if row_id is None:
+                row_id = next_id
+                next_id += 1
+            values = tuple(None if pd.isna(value) else value for value in row)
+            rows.append((row_id, *values))
+
+        connection.execute(f"DROP TABLE IF EXISTS {temporary_table}")
+        connection.execute(
+            f"""
+            CREATE TABLE {temporary_table} (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                date TEXT NOT NULL UNIQUE,
+                medium_silinda REAL,
+                premium_silinda REAL,
+                medium_bapanas REAL,
+                premium_bapanas REAL
+            )
+            """
+        )
+        connection.executemany(
+            f"""
+            INSERT INTO {temporary_table} (
+                id,
+                date,
+                medium_silinda,
+                premium_silinda,
+                medium_bapanas,
+                premium_bapanas
+            ) VALUES (?, ?, ?, ?, ?, ?)
+            """,
+            rows,
+        )
+        connection.execute(f"DROP TABLE IF EXISTS {TABLE_NAME}")
+        connection.execute(f"ALTER TABLE {temporary_table} RENAME TO {TABLE_NAME}")
+
+
+def main():
+    silinda = load_source(SILINDA_PATH)
+    bapanas = load_source(BAPANAS_PATH)
+    combined = build_combined(silinda, bapanas)
+    replace_table(combined)
+    print(f"{len(combined)} baris disimpan ke tabel '{TABLE_NAME}'.")
+
+
+if __name__ == "__main__":
+    main()
