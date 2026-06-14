@@ -48,7 +48,7 @@ def create_session():
 
 def build_url(commodity_id, market_id, end_date):
     return (
-        "https://svc-silinda.jabarprov.go.id/api/api/graphic_data/"
+        "https://svc-silinda.jabarprov.go.id/api/graphic_data/"
         f"{commodity_id}/{market_id}/day/price/{START_DATE}/{end_date}"
         "/0/market/-/eceran/null"
     )
@@ -66,7 +66,9 @@ def response_to_dataframe(payload, source_name):
 
     dataframe = pd.DataFrame(rows)
     if dataframe.empty or "result" not in dataframe.columns:
-        raise ValueError(f"Data Silinda kosong atau tidak memiliki result untuk {source_name}.")
+        raise ValueError(
+            f"Data Silinda kosong atau tidak memiliki result untuk {source_name}."
+        )
 
     return dataframe
 
